@@ -234,10 +234,11 @@ function hasChosenRadio( formToValidate, fieldToValidate ) {
 <!--
 function isFormOK(formToValidate) {
     var isValid = true;
-    // Bug fix Andrew Thompson 2018-01-06 - getElementById returned wrong element
-    //var title = document.getElementById('title'); // in case this function is invoked in a form without a 'title' element.
     var title = document.getElementsByName('title')[0]; // in case this function is invoked in a form without a 'title' element.
-    if ( title && title.value.length > 80 ) {
+    if (!formToValidate) { // Calls to this function don't seem to have used formToValidate so need to find it
+        formToValidate = document.getElementById('form_upload');
+    }
+    if ( title && title.value.length > 200 ) {
         isValid = false;
         alert('{ERR_TITLE_TOO_LONG}' + title.value);
     }
