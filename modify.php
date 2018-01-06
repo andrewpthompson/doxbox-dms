@@ -748,7 +748,9 @@ if ($default->use_file_expiry == 1)
          {
             $qFieldLabel = new Owl_DB;
 
-            $sql->query("SELECT id, field_values, field_name, field_type FROM $default->owl_docfields_table WHERE required = '1' ");
+            // Bug fix Andrew Thompson 2018-01-06 only the fields for the actual document type are required
+            //$sql->query("SELECT id, field_values, field_name, field_type FROM $default->owl_docfields_table WHERE required = '1' ");
+            $sql->query("SELECT id, field_values, field_name, field_type FROM $default->owl_docfields_table WHERE doc_type_id = $doctype AND required = '1' ");
 
             $sDoctypeValidationScript = '';
             while ($sql->next_record())
