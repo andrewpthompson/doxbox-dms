@@ -1288,7 +1288,7 @@ if ($action == "file_modify")
             $xtpl->assign('OWL_SESS', $sess);
             $xtpl->assign('DOCTYPE_ID', $sql->f("doctype"));
             $xtpl->assign('FILE_ID', $sql->f("id"));
-            fGenDoctypeFieldJSValidation ();
+            fGenDoctypeFieldJSValidation ($sql->f("doctype"));
 	 }
 
          $xtpl->assign('FILE_DESC_REQUIRED', '');
