@@ -7018,14 +7018,14 @@ function fGetMyAdminGroups ($userid)
 }
 
 
-function fGenDoctypeFieldJSValidation ()
+function fGenDoctypeFieldJSValidation ($doctype)
 {
    global $default, $owl_lang, $language, $xtpl;
 
            $qFieldLabel = new Owl_DB;
            $sql = new Owl_DB;
 
-            $sql->query("SELECT id, field_values, field_name, field_type FROM $default->owl_docfields_table WHERE required = '1' ");
+            $sql->query("SELECT id, field_values, field_name, field_type FROM $default->owl_docfields_table WHERE doc_type_id = $doctype AND required = '1' ");
 
             $sDoctypeValidationScript = '';
             while ($sql->next_record())

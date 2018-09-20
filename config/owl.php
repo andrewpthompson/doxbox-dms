@@ -408,8 +408,10 @@ $default->userTables_defaultTable = $default->userTables_table_prefix . "entitie
 //
 // *** Database Engine
 // Change this to reflect the database you are using
-// Mysql 
+// Mysql (not supported on PHP 7+)
 require_once("$default->owl_fs_root/phplib/db_mysql.inc");
+// MySQL via mysqli (PHP 7+ compatible)
+//require_once("$default->owl_fs_root/phplib/db_mysqli.inc");
 // Oracle  
 //require_once("$default->owl_fs_root/phplib/db_oci8.inc");
 // PostgreSQL  

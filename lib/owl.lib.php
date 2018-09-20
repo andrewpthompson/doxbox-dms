@@ -36,6 +36,7 @@ require_once($default->owl_fs_root ."/scripts/phpmailer/class.phpmailer.php");
 require_once($default->owl_fs_root ."/lib/owlsess.class.php");
 require_once($default->owl_fs_root ."/lib/owldb.class.php");  
 require_once($default->owl_fs_root ."/lib/functions.lib.php");
+require_once($default->owl_fs_root ."/lib/php7shim.lib.php");
 
 if (file_exists($default->owl_fs_root ."/install"))
 {
