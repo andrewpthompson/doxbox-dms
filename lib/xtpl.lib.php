@@ -27,7 +27,7 @@
 
 defined( 'OWL_INCLUDE' ) or die( 'Access Denied' );
 
-include_once($default->owl_fs_root . "/scripts/xtemplate/xtemplate.class.php");
+include_once($default->owl_fs_root . "/scripts/xtemplate/xtemplate.class.php5");
 
 
 function fPrintPrefsXTPL ($location)

@@ -38,7 +38,7 @@ class Owl_DB extends DB_Sql
    // Password for database
    var $Password = "";
 
-   function Owl_DB()
+   function __construct()
    {
       global $default;
       if(!isset($default->owl_current_db))

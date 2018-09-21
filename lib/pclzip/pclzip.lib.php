@@ -205,14 +205,14 @@
     var $magic_quotes_status;
 
   // --------------------------------------------------------------------------------
-  // Function : PclZip()
+  // Function : constructor
   // Description :
   //   Creates a PclZip object and set the name of the associated Zip archive
   //   filename.
   //   Note that no real action is taken, if the archive does not exist it is not
   //   created. Use create() for that.
   // --------------------------------------------------------------------------------
-  function PclZip($p_zipname)
+  function __construct($p_zipname)
   {
 
     // ----- Tests the zlib
